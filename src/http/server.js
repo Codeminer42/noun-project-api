@@ -1,10 +1,12 @@
 const Express = require('express')
 const Morgan = require('morgan')
+const Cors = require('cors')
 const Router = require('./router')
 
 const server = Express()
 
 server.use(Morgan('tiny'))
+server.use(Cors())
 
 Router.addRoutes(server)
 
